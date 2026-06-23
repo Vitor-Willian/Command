@@ -15,7 +15,7 @@ public class BancoPessoas {
         // commands.put(3, new ListarPessoasCommand(this));
     }
 
-    public void service(String cmd, Object data) throws Exception {
+    public void service(String cmd, Object... data) throws Exception {
 
         if(!commands.containsKey(cmd)) {
             throw new Exception("Comando inválido: " + cmd);
