@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class BancoPessoas {
     private HashMap<Integer, Pessoa> pessoas;
-    private HashMap<Integer, Command> commands;
+    private HashMap<String, Command> commands;
 
     public BancoPessoas() {
         initCommands();
@@ -15,7 +15,7 @@ public class BancoPessoas {
         // commands.put(3, new ListarPessoasCommand(this));
     }
 
-    public void service(String cmd, Object data) throws Exception {
+    public void service(String cmd, Object... data) throws Exception {
 
         if(!commands.containsKey(cmd)) {
             throw new Exception("Comando inválido: " + cmd);
@@ -23,5 +23,13 @@ public class BancoPessoas {
 
         Command c = (Command) commands.get(cmd);
         Object result = c.execute(data);
+    }
+
+    public HashMap<Integer, Pessoa> getPessoas() {
+        return pessoas;
+    }
+
+    public HashMap<String, Command> getCommands() {
+        return commands;
     }
 }
