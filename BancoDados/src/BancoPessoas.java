@@ -12,8 +12,7 @@ public class BancoPessoas {
         commands = new HashMap<>();
         pessoas = new HashMap<>();
         commands.put("new", new New());
-        // commands.put(2, new RemoverPessoaCommand(this));
-        // commands.put(3, new ListarPessoasCommand(this));
+        commands.put("del", new Del());
         commands.put("get", new Get());
         commands.put("getall", new GetAll());
     }
