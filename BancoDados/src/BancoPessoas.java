@@ -35,4 +35,10 @@ public class BancoPessoas {
     public HashMap<String, Command> getCommands() {
         return commands;
     }
+
+    public void showCommands() {
+        System.out.println("Comandos:");
+        this.getCommands().forEach((k, v) -> System.out.println(k));
+    }
+
 }

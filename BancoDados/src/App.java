@@ -2,6 +2,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         BancoPessoas banco = new BancoPessoas();
         
+        banco.showCommands();
+        System.out.println("\n");
         banco.service("new", banco, 1, "João");
         banco.service("new", banco, 2, "Marcos");
         banco.service("new", banco, 3, "Ana");
