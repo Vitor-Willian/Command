@@ -25,7 +25,7 @@ public class BancoPessoas {
         }
 
         Command c = (Command) commands.get(cmd);
-        Object result = c.execute(data);
+        c.execute(data);
     }
 
     public HashMap<Integer, Pessoa> getPessoas() {
