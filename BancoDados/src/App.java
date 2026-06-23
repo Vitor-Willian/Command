@@ -12,6 +12,9 @@ public class App {
         System.out.println("\n");
         banco.service("del", banco, 2);
         banco.service("getall", banco);
+        System.out.println("\n");
+        banco.service("delall", banco);
+        banco.service("getall", banco);
 
     }
 }

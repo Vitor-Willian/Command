@@ -13,6 +13,7 @@ public class BancoPessoas {
         pessoas = new HashMap<>();
         commands.put("new", new New());
         commands.put("del", new Del());
+        commands.put("delall", new DelAll());
         commands.put("get", new Get());
         commands.put("getall", new GetAll());
     }
