@@ -1,16 +1,20 @@
 public class Get implements Command {
     
     public Object execute(Object... args) throws Exception {
-        Object arg = args[0];
-        if (arg instanceof BancoPessoas) {
+        Object banco = args[0];
+        Object id = args[1];
 
-            BancoPessoas banco = (BancoPessoas) arg;
+        if (banco instanceof BancoPessoas && id instanceof Integer) {
+            BancoPessoas b = (BancoPessoas) banco;
+            Integer i = (Integer) id;
 
-            for (Pessoa pessoa : banco.getPessoas().values()) {
+            Pessoa pessoa = b.getPessoas().get(i);
+            if (pessoa != null) {
                 System.out.println("ID: " + pessoa.getId() + ", Nome: " + pessoa.getNome());
+                return pessoa;
+            } else {
+                throw new Exception("Pessoa não encontrada com ID: " + i);
             }
-
-            return banco.getPessoas();
             
         } else {
             throw new Exception("Argumento inválido para o comando Get");
