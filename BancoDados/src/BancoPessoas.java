@@ -12,8 +12,8 @@ public class BancoPessoas {
         commands = new HashMap<>();
         pessoas = new HashMap<>();
         commands.put("new", new New());
-        // commands.put(2, new RemoverPessoaCommand(this));
-        // commands.put(3, new ListarPessoasCommand(this));
+        commands.put("del", new Del());
+        commands.put("delall", new DelAll());
         commands.put("get", new Get());
         commands.put("getall", new GetAll());
     }
@@ -25,7 +25,7 @@ public class BancoPessoas {
         }
 
         Command c = (Command) commands.get(cmd);
-        Object result = c.execute(data);
+        c.execute(data);
     }
 
     public HashMap<Integer, Pessoa> getPessoas() {
@@ -35,4 +35,10 @@ public class BancoPessoas {
     public HashMap<String, Command> getCommands() {
         return commands;
     }
+
+    public void showCommands() {
+        System.out.println("Comandos:");
+        this.getCommands().forEach((k, v) -> System.out.println(k));
+    }
+
 }
