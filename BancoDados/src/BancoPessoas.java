@@ -10,6 +10,7 @@ public class BancoPessoas {
 
     private void initCommands() {
         commands = new HashMap<>();
+        pessoas = new HashMap<>();
         commands.put("get", new Get());
         commands.put("getall", new GetAll());
     }
