@@ -4,10 +4,13 @@ public class New implements Command {
         
         Object[] objs = (Object[]) args;
         Object banco = objs[0];
-        Object pessoa = objs[1];
-        if (banco instanceof BancoPessoas && pessoa instanceof Pessoa) {
+        Object id = objs[1];
+        Object nome = objs[2];
+        if (banco instanceof BancoPessoas && id instanceof Integer && nome instanceof String) {
             BancoPessoas b = (BancoPessoas) banco;
-            Pessoa p = (Pessoa) pessoa;
+            Integer pessoaId = (Integer) id;
+            String pessoaNome = (String) nome;
+            Pessoa p = new Pessoa(pessoaId, pessoaNome);
             b.getPessoas().put(p.getId(), p);
             return true;
         }else {

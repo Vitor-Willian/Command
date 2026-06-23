@@ -1,5 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        BancoPessoas banco = new BancoPessoas();
+        
+        banco.service("new", banco, 1, "João");
+
     }
 }
