@@ -14,6 +14,8 @@ public class BancoPessoas {
         commands.put("new", new New());
         // commands.put(2, new RemoverPessoaCommand(this));
         // commands.put(3, new ListarPessoasCommand(this));
+        commands.put("get", new Get());
+        commands.put("getall", new GetAll());
     }
 
     public void service(String cmd, Object... data) throws Exception {
